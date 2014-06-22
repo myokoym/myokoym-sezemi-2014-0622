@@ -1,3 +1,4 @@
 *.o
 recipe
 recipe.exe
+librecipe.dll

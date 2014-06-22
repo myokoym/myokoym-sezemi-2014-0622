@@ -11,6 +11,5 @@ typedef struct _recipe {
 } Recipe;
 
 Recipe * recipe_new();
-int recipe_print(Recipe *);
 
 #endif /* RECIPE_H */

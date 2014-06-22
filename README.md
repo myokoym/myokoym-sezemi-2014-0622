@@ -2,7 +2,7 @@
 
 ## データファイルの仕様
 
-1行に品名とレシピのURLをスペースまたはタブ区切りで記述します。
+1行に品名とレシピのURLをスペースまたはタブ区切りで書きます。
 
     品名 レシピのURL
     ...
@@ -15,6 +15,8 @@
 
 ## 実行方法
 
+プログラムはC言語で書かれているので、コンパイルしてから実行してください。
+
 ### コンパイル
 
     > make
@@ -23,17 +25,19 @@
 
 以下のような書式です。
 
-    > recipe データファイル [ID]
+    > recipe ユーザーID データファイル [レシピID]
 
-IDを指定しないと、すべてのレシピが出力されます。
+レシピIDを指定しないと、すべてのレシピが出力されます。
 
-    > recipe recipe-data.txt
+    > recipe myokoym recipe-data.txt
+    ユーザー名: myokoym
     1: オムライス http://cookpad.com/recipe/2653946
     2: 親子丼 http://cookpad.com/recipe/2657882
     3: 杏仁豆腐 http://cookpad.com/recipe/2654398
 
 IDを指定すると、指定したレシピのみが出力されます。
 
-    > recipe recipe-data.txt 2
+    > recipe myokoym recipe-data.txt 2
+    ユーザー名: myokoym
     2: 親子丼 http://cookpad.com/recipe/2657882
 

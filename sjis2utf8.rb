@@ -5,6 +5,9 @@ require "fileutils"
 FILES = [
   "README.md",
   "recipe-data.txt",
+  "main.c",
+  "user.c",
+  "recipe.c",
 ]
 
 def sjis2utf8(text)

@@ -1,16 +1,14 @@
 #ifndef RECIPE_H
 #define RECIPE_H
 
-#define ITEM_SIZE 256
+#define RECIPE_NAME_SIZE 256
+#define RECIPE_URL_SIZE 256
 
 typedef struct {
-  char name[ITEM_SIZE];
-  char url[ITEM_SIZE];
+  char name[RECIPE_NAME_SIZE];
+  char url[RECIPE_URL_SIZE];
 } Recipe;
 
-int validate_arguments(int);
-int scan_from_file(char *, Recipe *);
-void print_all(Recipe *);
-int print_with_id(Recipe *, int);
+int recipe_print(Recipe *, int);
 
 #endif /* RECIPE_H */

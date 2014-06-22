@@ -1,5 +1,5 @@
 CC   = gcc
-OBJS = recipe.o main.o
+OBJS = recipe.o user.o main.o
 
 recipe: $(OBJS)
 	$(CC) -o $@ $(OBJS)

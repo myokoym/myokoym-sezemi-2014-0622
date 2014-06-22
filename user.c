@@ -4,11 +4,11 @@
 
 void
 user_print_name(User *user) {
-  printf("ユーザー名: %s\n", user->name);
+  printf("ユーザー名: %d: %s\n", user->id, user->name);
 }
 
 int
-user_scan_from_file(User *user, char *filename) {
+user_scan_recipes_from_file(User *user, char *filename) {
   int i;
   FILE *file;
   char line[1024];

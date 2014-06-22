@@ -25,8 +25,9 @@ main(int argc, char *argv[]) {
   }
 
   for (i = 0; i < n_users; i++) {
+    user[i].id = i + 1;
     user[i].name = argv[1 + (i * 2)];
-    if (user_scan_from_file(&user[i], argv[2 + (i * 2)]) != 0) {
+    if (user_scan_recipes_from_file(&user[i], argv[2 + (i * 2)]) != 0) {
       fprintf(stderr, "%s\n", USAGE);
       return 1;
     }

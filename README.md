@@ -34,12 +34,12 @@ Windows環境の方はコンパイル不要です。
 レシピIDを指定しないと、すべてのレシピが出力されます。
 
     > recipe myokoym recipe-data1.txt you recipe-data2.txt
-    ユーザー名: myokoym
+    ユーザー名: 1: myokoym
     1: オムライス http://cookpad.com/recipe/2653946
     2: 親子丼 http://cookpad.com/recipe/2657882
     3: 杏仁豆腐 http://cookpad.com/recipe/2654398
 
-    ユーザー名: you
+    ユーザー名: 2: you
     4: オムライス http://cookpad.com/recipe/2653779
     5: 鶏の唐揚げ http://cookpad.com/recipe/2660337
     6: カレー http://cookpad.com/recipe/2661962
@@ -47,8 +47,8 @@ Windows環境の方はコンパイル不要です。
 IDを指定すると、指定したレシピのみが出力されます。
 
     > recipe myokoym recipe-data1.txt you recipe-data2.txt 5
-    ユーザー名: myokoym
+    ユーザー名: 1: myokoym
 
-    ユーザー名: you
+    ユーザー名: 2: you
     5: 鶏の唐揚げ http://cookpad.com/recipe/2660337
 

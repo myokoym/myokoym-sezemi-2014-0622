@@ -8,7 +8,8 @@ typedef struct {
 } Recipe;
 
 int validate_arguments(int);
-int scan(char *, Recipe *);
-void print(Recipe *);
+int scan_from_file(char *, Recipe *);
+void print_all(Recipe *);
+int print_with_id(Recipe *, int);
 
 #endif /* RECIPE_H */

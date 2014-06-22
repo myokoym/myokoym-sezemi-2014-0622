@@ -8,5 +8,5 @@
 
 ### 実行
 
-    > recipe recipe-data.txt
+    > recipe recipe-data.txt [ID]
 

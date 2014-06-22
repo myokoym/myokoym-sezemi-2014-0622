@@ -8,9 +8,9 @@ FILES = [
   "recipe-data2.txt",
   "recipe-data3.txt",
   "recipe-data4.txt",
-  "main.c",
-  "user.c",
-  "recipe.c",
+  "main/main.c",
+  "lib/user.c",
+  "lib/recipe.c",
 ]
 
 def sjis2utf8(text)

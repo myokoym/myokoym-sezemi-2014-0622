@@ -1,4 +1,7 @@
 *.o
 recipe
 recipe.exe
+recipe.dll
+main
+main.exe
 librecipe.dll

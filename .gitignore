@@ -1,8 +1,6 @@
 *.o
-recipe
 recipe.exe
 recipe-csv.exe
 recipe.dll
-main
 main.exe
 librecipe.dll

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define USAGE "Usage: recipe-csv <ƒ†[ƒU[–¼ ƒf[ƒ^ƒtƒ@ƒCƒ‹>..."
+#define USAGE "Usage: recipe-csv <ãƒ¦ãƒ¼ã‚¶ãƒ¼å ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«>..."
 
 int
 user_scan_recipes_from_file(User *user, char *filename) {

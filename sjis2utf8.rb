@@ -8,7 +8,8 @@ FILES = [
   "recipe-data2.txt",
   "recipe-data3.txt",
   "recipe-data4.txt",
-  "main/main.c",
+  "recipe/recipe.c",
+  "recipe-csv/recipe-csv.c",
   "lib/user.c",
   "lib/recipe.c",
 ]

@@ -1,8 +1,7 @@
 #include "user.h"
 #include <stdio.h>
 
-#define USAGE "Usage: recipe <ユーザーID データファイル>... [レシピID]"
-#define LIST_SIZE 256
+#define USAGE "Usage: recipe <ユーザー名 データファイル>... <ユーザーID> [レシピID]"
 
 int
 validate_arguments(int argc) {
@@ -14,10 +13,11 @@ validate_arguments(int argc) {
 
 int
 main(int argc, char *argv[]) {
-  int n_users = (argc - 1) / 2;
+  int n_users = (argc - 2) / 2;
   User user[n_users];
   int i;
-  int specified_id;
+  int specified_user_id;
+  int specified_recipe_id;
 
   if (validate_arguments(argc) != 0) {
     fprintf(stderr, "%s\n", USAGE);
@@ -33,14 +33,23 @@ main(int argc, char *argv[]) {
     }
   }
 
+  if (sscanf(argv[1 + (n_users * 2)], "%d", &specified_user_id) == EOF) {
+    fprintf(stderr, "%s\n", USAGE);
+    return 1;
+  }
+
   for (i = 0; i < n_users; i++) {
+    if (specified_user_id != -1 && specified_user_id != i + 1) {
+      continue;
+    }
+
     user_print_name(&user[i]);
-    if (argc == (2 + (n_users * 2))) {
-      if (sscanf(argv[1 + (n_users * 2)], "%d", &specified_id) == EOF) {
+    if (argc == (3 + (n_users * 2))) {
+      if (sscanf(argv[2 + (n_users * 2)], "%d", &specified_recipe_id) == EOF) {
         fprintf(stderr, "%s\n", USAGE);
         return 1;
       }
-      if (user_print_with_id(&user[i], specified_id) != 0) {
+      if (user_print_with_id(&user[i], specified_recipe_id) != 0) {
         fprintf(stderr, "%s\n", USAGE);
         return 1;
       }

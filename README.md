@@ -26,14 +26,18 @@ Windows環境の方はコンパイル不要です。
 
 以下のような書式です。
 
-    > recipe <ユーザーID データファイル>... [レシピID]
+    > recipe <ユーザー名 データファイル>... <ユーザーID> [レシピID]
 
-ユーザーIDとデータファイルの組は複数指定できます。
+ユーザー名とデータファイルの組は複数指定できます。
 必ずペアで指定してください。
+
+ユーザーIDを指定すると、指定したユーザーのレシピのみが出力されます。
+ユーザーIDに-1を指定すると、すべてのユーザーが出力されます。
+ユーザーIDは省略不可です。
 
 レシピIDを指定しないと、すべてのレシピが出力されます。
 
-    > recipe myokoym recipe-data1.txt you recipe-data2.txt
+    > recipe myokoym recipe-data1.txt you recipe-data2.txt -1
     ユーザー名: 1: myokoym
     1: オムライス http://cookpad.com/recipe/2653946
     2: 親子丼 http://cookpad.com/recipe/2657882
@@ -44,11 +48,24 @@ Windows環境の方はコンパイル不要です。
     5: 鶏の唐揚げ http://cookpad.com/recipe/2660337
     6: カレー http://cookpad.com/recipe/2661962
 
-IDを指定すると、指定したレシピのみが出力されます。
+ユーザーIDを指定した場合:
 
-    > recipe myokoym recipe-data1.txt you recipe-data2.txt 5
+    > recipe myokoym recipe-data1.txt you recipe-data2.txt 2
+    ユーザー名: 2: you
+    4: オムライス http://cookpad.com/recipe/2653779
+    5: 鶏の唐揚げ http://cookpad.com/recipe/2660337
+    6: カレー http://cookpad.com/recipe/2661962
+
+レシピIDを指定すると、指定したレシピのみが出力されます。
+
+    > recipe myokoym recipe-data1.txt you recipe-data2.txt -1 5
     ユーザー名: 1: myokoym
 
     ユーザー名: 2: you
     5: 鶏の唐揚げ http://cookpad.com/recipe/2660337
 
+ユーザーIDを指定した場合:
+
+    > recipe myokoym recipe-data1.txt you recipe-data2.txt 2 5
+    ユーザー名: 2: you
+    5: 鶏の唐揚げ http://cookpad.com/recipe/2660337

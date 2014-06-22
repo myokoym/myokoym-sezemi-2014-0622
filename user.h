@@ -7,7 +7,8 @@
 
 typedef struct {
   char *name;
-  Recipe recipes[USER_RECIPES_SIZE];
+  int n_recipes;
+  Recipe *recipes[USER_RECIPES_SIZE];
 } User;
 
 void user_print_name(User *);

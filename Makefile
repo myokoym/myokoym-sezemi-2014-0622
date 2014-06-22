@@ -2,7 +2,7 @@ CC   = gcc
 OBJS = recipe.o user.o main.o
 
 recipe: $(OBJS)
-	$(CC) -o $@ $(OBJS)
+	$(CC) -Wall -o $@ $(OBJS)
 
 .c.o:
-	$(CC) -c $<
+	$(CC) -Wall -c $<

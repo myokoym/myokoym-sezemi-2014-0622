@@ -5,6 +5,7 @@
 
 typedef struct {
   char name[ITEM_SIZE];
+  char url[ITEM_SIZE];
 } Recipe;
 
 int validate_arguments(int);

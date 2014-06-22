@@ -4,7 +4,10 @@ require "fileutils"
 
 FILES = [
   "README.md",
-  "recipe-data.txt",
+  "recipe-data1.txt",
+  "recipe-data2.txt",
+  "recipe-data3.txt",
+  "recipe-data4.txt",
   "main.c",
   "user.c",
   "recipe.c",

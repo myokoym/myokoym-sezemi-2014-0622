@@ -8,9 +8,9 @@ user_print_name(User *user) {
 
 int
 user_scan_from_file(User *user, char *filename) {
+  static int recipe_id = 1;
   int i;
   FILE *file;
-  Recipe *recipes = user->recipes;
 
   file = fopen(filename, "r");
   if (file == NULL) {
@@ -18,8 +18,10 @@ user_scan_from_file(User *user, char *filename) {
   }
   for (i = 0; fscanf(file,
                      "%s%s",
-                     recipes[i].name,
-                     recipes[i].url) != EOF; i++) {
+                     user->recipes[i].name,
+                     user->recipes[i].url) != EOF; i++) {
+    user->recipes[i].id = recipe_id;
+    recipe_id++;
   }
   fclose(file);
   return 0;
@@ -28,21 +30,24 @@ user_scan_from_file(User *user, char *filename) {
 void
 user_print_all(User *user) {
   int i;
-  Recipe *recipes = user->recipes;
 
-  for (i = 0; recipes[i].name[0] != '\0'; i++) {
-    recipe_print(&recipes[i], i + 1);
+  for (i = 0; user->recipes[i].name[0] != '\0'; i++) {
+    recipe_print(&user->recipes[i]);
   }
 }
 
 int
 user_print_with_id(User *user, int id) {
-  int i = id - 1;
-  Recipe *recipes = user->recipes;
+  int i;
 
-  if (recipes[i].name[0] == '\0') {
-    return 1;
+  for (i = 0; user->recipes[i].name[0] != '\0'; i++) {
+    if (user->recipes[i].name[0] == '\0') {
+      continue;
+    }
+    if (user->recipes[i].id == id) {
+      recipe_print(&user->recipes[i]);
+    }
   }
-  recipe_print(&recipes[i], id);
+
   return 0;
 }

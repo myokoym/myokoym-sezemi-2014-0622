@@ -5,10 +5,11 @@
 #define RECIPE_URL_SIZE 256
 
 typedef struct {
+  int  id;
   char name[RECIPE_NAME_SIZE];
   char url[RECIPE_URL_SIZE];
 } Recipe;
 
-int recipe_print(Recipe *, int);
+int recipe_print(Recipe *);
 
 #endif /* RECIPE_H */

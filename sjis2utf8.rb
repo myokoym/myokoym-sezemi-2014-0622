@@ -15,7 +15,7 @@ FILES = [
 ]
 
 def sjis2utf8(text)
-  text.force_encoding(Encoding::Windows_31J).encode(Encoding::UTF_8)
+  text.encode(Encoding::UTF_8, Encoding::Windows_31J)
 end
 
 FILES.each do |filename|

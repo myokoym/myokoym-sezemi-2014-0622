@@ -7,7 +7,7 @@ Recipe *
 recipe_new() {
   Recipe *recipe;
 
-  recipe = malloc(sizeof(*recipe));
+  recipe = malloc(sizeof(Recipe));
   recipe->id = recipe_id;
   recipe_id++;
 

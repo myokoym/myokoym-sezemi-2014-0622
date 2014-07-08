@@ -10,6 +10,6 @@ typedef struct _recipe {
   char url[RECIPE_URL_SIZE];
 } Recipe;
 
-Recipe * recipe_new();
+Recipe *recipe_new();
 
 #endif /* RECIPE_H */

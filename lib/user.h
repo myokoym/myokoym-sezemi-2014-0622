@@ -12,6 +12,6 @@ typedef struct _user {
   Recipe *recipes[USER_RECIPES_SIZE];
 } User;
 
-Recipe * user_get_recipe_by_id(User *, int);
+Recipe *user_get_recipe_by_id(User *, int);
 
 #endif /* USER_H */
